@@ -1,8 +1,13 @@
 import axios from 'axios'
 function Persons({persons, setPersons, filterContact, setMessage}) {
+  //const filterName = persons.filter(person => (person.name.toLowerCase()).includes(filterContact.toLowerCase()))
+
+  const filterName = persons?.filter(person => 
+    person.name.toLowerCase().includes(filterContact.toLowerCase())
+  ) || [];
   
-  const filterName = persons.filter(person => (person.name.toLowerCase()).includes(filterContact.toLowerCase()))
-  console.log(filterName)  
+  console.log(filterName)
+  
                                           
   
   const handleDelete = (id) => {

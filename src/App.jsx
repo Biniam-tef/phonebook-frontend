@@ -66,7 +66,7 @@ const App = () => {
       const newPhone = {'name' : newName, 'number' : newNumber}
       phone.createData(newPhone)
       .then(newAddress => {
-        setPersons(newAddress)
+        setPersons([...persons, newAddress])
         setMessage(`Added ${newName}`)
         setTimeout(() => {
           setMessage(null)

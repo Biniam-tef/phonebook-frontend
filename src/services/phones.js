@@ -8,7 +8,11 @@ function getData() {
 
 function createData(newObject) {
   const request = axios.post(`${baseUrl}`, newObject)
-  return request.then(res => res.data)
+  console.log('post', request)
+  return request.then(res =>{
+    console.log(res.data)
+    return res.data
+  })
 }
 
 const update = (id, newObject) => {
